@@ -5,8 +5,6 @@ async function registerSW() {
         } catch (e) {
             alert('ServiceWorker registration failed. Sorry about that.'); 
         }
-    } else {
-        document.querySelector('.alert').removeAttribute('hidden'); 
     }
 }
 
