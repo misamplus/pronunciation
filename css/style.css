@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif !important;
+}
+
+a {
+    color: #202020;
+    text-decoration: none;
+    border-bottom: 1px dashed #202020;
+}
+a:hover, a:focus {
+    border-bottom: 1px dashed #CECECE;
+}
+
+p {
+    margin: 5px 0;
+}
+
+#header {
+    background: #009b8b;
+    padding: 10px;
+    box-shadow: 0 0 2px 0 #202020;
+}
+
+h1 {
+    color: #FFF;
+    font-size: 24pt;
+    font-weight: normal;
+}
+
+#content {
+    margin: 10px;
+}
+
+.block {
+    display: block;
+    margin: 15px 5px;
+    min-height: 40px;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+    float: left;
+}
+
+.shift-left {
+    margin-left: 5px;
+}
+
+.full {
+    width: -webkit-fill-available;
+}
+
+.input {
+    background: none;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 1px solid #CECECE;
+    font-size: 14pt;
+    padding: 5px;
+}
+.input:hover, .input:focus {
+    border-bottom: 1px solid #009b8b;
+}
+
+.button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    background: #CECECE;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14pt;
+}
+.button:hover, .button:focus {
+    background: #afafaf;
+}
+
+span {
+    font-size: 14pt;
+}
+
+#footer {
+    text-align: center;
+    font-size: 9pt;
+    color: #202020;
+}

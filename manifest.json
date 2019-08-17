@@ -1,0 +1,16 @@
+{
+  "name": "Pronunciation",
+  "short_name": "Pronunciation",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#009b8b",
+  "description": "British and American English pronunciation with the voice and phonetic.",
+  "theme_color": "#009b8b",
+  "icons": [
+    {
+      "src": "./img/icons/ir.misam.pronunciation_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

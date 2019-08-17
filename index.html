@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pronunciation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+    <link rel="shortcut icon" type="image/x-icon" href='./img/icons/ir.misam.pronunciation_512x512.png'/>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v=20190817-1" />
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/ir.misam.pronunciation_512x512-bg.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="#009b8b" />
+    <meta name="mobile-web-app-title" content="Pronunciation" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Pronunciation</h1>
+    </div>
+    <div id="content">
+      <div id="form">
+        <div class="block">
+          <input id="word-input" class="input full" placeholder="Type a word..." value="ask" />
+        </div>
+        <div class="block">
+          <button id="find-button" class="full button">Find</button>
+        </div>
+        <div class="block">
+          <div class="inline">
+            <button id="uk-button" class="full button">UK 🔉</button>
+          </div>
+          <div class="inline shift-left">
+            <span id="uk-span"></span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="inline">
+            <button id="us-button" class="full button">US 🔉</button>
+          </div>
+          <div class="inline shift-left">
+            <span id="us-span"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p>PWA version of <a href="https://cafebazaar.ir/app/ir.misam.pronunciation">Pronunciation</a></p>
+      <p>Designed by <a href="http://misam.ir">Misam Saki</a></p>
+      <p>Powered by <a href="https://dictionary.cambridge.org">Cambridge Dictionary</a></p>
+    </div>
+    <audio id="uk-audio"></audio>
+    <audio id="us-audio"></audio>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/app.js?v=20190817-1"></script>
+  </body>
+</html>
