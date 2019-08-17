@@ -2,9 +2,9 @@ const cacheName = 'pronunciation-v20190817-1';
 const staticAssets = [
     './',
     './index.html',
-    './styles.css',
-    './jquery-3.4.1.min.js',
-    './app.js'
+    './css/styles.css',
+    './js/jquery-3.4.1.min.js',
+    './js/app.js'
 ];
 
 self.addEventListener('install', async event => {
