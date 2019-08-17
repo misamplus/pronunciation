@@ -1,7 +1,7 @@
 async function registerSW() {
     if ('serviceWorker' in navigator) { 
         try {
-            await navigator.serviceWorker.register('./js/sw.js?v=20190817-1'); 
+            await navigator.serviceWorker.register('./js/sw.js?v=20190818-1'); 
         } catch (e) {
             alert('ServiceWorker registration failed. Sorry about that.'); 
         }
