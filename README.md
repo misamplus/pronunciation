@@ -8,7 +8,7 @@ Designed by [Misam Saki](http://misam.ir)
 
 Powered by [Cambridge Dictionary](https://dictionary.cambridge.org)
 
-See [Demo](http://misam.ir/pronunciation)
+See [Demo](https://pronunciation.cloudns.asia/)
 
 ## License
 
