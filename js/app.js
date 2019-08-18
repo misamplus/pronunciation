@@ -1,7 +1,7 @@
 async function registerSW() {
     if ('serviceWorker' in navigator) { 
         try {
-            await navigator.serviceWorker.register('./js/sw.js?v=20190818-1'); 
+            await navigator.serviceWorker.register('./js/sw.js?v=20190818-2'); 
         } catch (e) {
             alert('ServiceWorker registration failed. Sorry about that.'); 
         }
@@ -17,7 +17,7 @@ window.addEventListener('load', e => {
             render_phonetics(response);
             render_voices(response);
         }).fail(function() {
-            $.get("https://goxcors.appspot.com/cors?method=GET&url=https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
+            $.get("https://api.codetabs.com/v1/proxy?quest=https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
                 render_phonetics(response);
                 render_voices(response);
             }).fail(function() {
