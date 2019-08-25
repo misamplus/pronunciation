@@ -13,17 +13,25 @@ window.addEventListener('load', e => {
         $("#uk-span").html("...");
         $("#us-span").html("...");
         var word = $("#word-input").val().toLowerCase().trim();
-        $.get("https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
-            render_phonetics(response);
-            render_voices(response);
-        }).fail(function() {
-            $.get("https://api.codetabs.com/v1/proxy?quest=https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
+        var autoplay = $("input[name='autoplay']:checked").val();
+        if (word != "") {
+            $.get("https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
                 render_phonetics(response);
                 render_voices(response);
             }).fail(function() {
-                alert("Connection error!");
+                $.get("https://api.codetabs.com/v1/proxy?quest=https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
+                    render_phonetics(response);
+                    render_voices(response);
+                    if (autoplay == "uk") {
+                        $("#uk-button").trigger("click");
+                    } else if (autoplay == "us") {
+                        $("#us-button").trigger("click");
+                    }
+                }).fail(function() {
+                    alert("Connection error!");
+                });
             });
-        });
+        }
     });
     registerSW(); 
 });

@@ -20,7 +20,7 @@
     <div id="content">
       <div id="form">
         <div class="block">
-          <input id="word-input" class="input full" placeholder="Type a word..." value="ask" />
+          <input id="word-input" class="input full" placeholder="Type a word..." />
         </div>
         <div class="block">
           <button id="find-button" class="full button">Find</button>
@@ -41,6 +41,13 @@
             <span id="us-span"></span>
           </div>
         </div>
+        <div class="block">
+          <div class="inline">
+            <input type="radio" checked name="autoplay" value="uk"> UK
+            <input type="radio" name="autoplay" value="us"> US
+            <input type="radio" name="autoplay" value="none"> None
+          </div>
+        </div>
       </div>
     </div>
     <div id="footer">
@@ -51,6 +58,6 @@
     <audio id="uk-audio"></audio>
     <audio id="us-audio"></audio>
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/app.js?v=20190818-2"></script>
+    <script src="./js/app.js?v=20190825-1"></script>
   </body>
 </html>
