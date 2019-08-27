@@ -1,13 +1,3 @@
-async function registerSW() {
-    if ('serviceWorker' in navigator) { 
-        try {
-            await navigator.serviceWorker.register('./js/sw.js?v=20190818-2'); 
-        } catch (e) {
-            alert('ServiceWorker registration failed. Sorry about that.'); 
-        }
-    }
-}
-
 window.addEventListener('load', e => {
     $("#find-button").click(function () {
         $("#uk-span").html("...");
@@ -35,6 +25,16 @@ window.addEventListener('load', e => {
     });
     registerSW(); 
 });
+
+async function registerSW() {
+    if ("serviceWorker" in navigator) { 
+        try {
+            await navigator.serviceWorker.register("./sw.js?v=20190826-6"); 
+        } catch (e) {
+            alert("ServiceWorker registration failed!"); 
+        }
+    }
+}
 
 function render_phonetics(response) {
     var de1 = '<span class="ipa">';
