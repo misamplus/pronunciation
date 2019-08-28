@@ -1,4 +1,4 @@
-const cacheName = "pronunciation-v1-20190826-6";
+const cacheName = "pronunciation-v1-20190828-1";
 const staticAssets = [
     "/index.html",
     "/css/styles.css",
@@ -8,7 +8,7 @@ const staticAssets = [
 
 self.addEventListener("install", async event => {
     const cache = await caches.open(cacheName);
-    //await cache.addAll(staticAssets);
+    await cache.addAll(staticAssets);
 });
 
 self.addEventListener("fetch", event => {
