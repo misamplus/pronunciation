@@ -29,7 +29,7 @@ window.addEventListener('load', e => {
 async function registerSW() {
     if ("serviceWorker" in navigator) { 
         try {
-            await navigator.serviceWorker.register("./sw.js?v=20190828-1"); 
+            await navigator.serviceWorker.register("./sw.js?v=20190828-5"); 
         } catch (e) {
             alert("ServiceWorker registration failed!"); 
         }
@@ -53,6 +53,22 @@ function render_phonetics(response) {
 
     $("#uk-span").html("/" + uk + "/");
     $("#us-span").html("/" + us + "/");
+
+    $("#uk-input").val("/" + uk + "/");
+    $("#us-input").val("/" + us + "/");
+
+    $("#uk-span").click(function () {
+        var textElem = document.getElementById("uk-input");
+        textElem.select();
+        textElem.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    });
+    $("#us-span").click(function () {
+        var textElem = document.getElementById("us-input");
+        textElem.select();
+        textElem.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    });
 }
 
 function createAudio(eid, src) {
