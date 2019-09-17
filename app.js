@@ -29,7 +29,7 @@ window.addEventListener('load', e => {
 async function registerSW() {
     if ("serviceWorker" in navigator) { 
         try {
-            await navigator.serviceWorker.register("./sw.js?v=20190828-5"); 
+            await navigator.serviceWorker.register("./sw.js?v=20190917-1"); 
         } catch (e) {
             alert("ServiceWorker registration failed!"); 
         }
@@ -37,7 +37,7 @@ async function registerSW() {
 }
 
 function render_phonetics(response) {
-    var de1 = '<span class="ipa">';
+    var de1 = '<span class="ipa dipa">';
 
     var uk_start = response.search(de1) + de1.length;
     var remind = response.substring(uk_start, response.length);
@@ -79,7 +79,7 @@ function createAudio(eid, src) {
 }
 
 function render_voices(response) {
-    var de1 = 'data-src-mp3="';
+    var de1 = '<source type="audio/mpeg" src="';
 
     var uk_start = response.search(de1) + de1.length;
     var remind = response.substring(uk_start, response.length)

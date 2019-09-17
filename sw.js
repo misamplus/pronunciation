@@ -1,4 +1,4 @@
-const cacheName = "pronunciation-v1-20190828-5";
+const cacheName = "pronunciation-v1-20190917-1";
 const staticAssets = [
     "/index.html",
     "/css/styles.css",
