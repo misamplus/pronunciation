@@ -5,11 +5,10 @@ window.addEventListener('load', e => {
         var word = $("#word-input").val().toLowerCase().trim();
         var autoplay = $("input[name='autoplay']:checked").val();
         if (word != "") {
-            $.get("https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
-                render_phonetics(response);
-                render_voices(response);
-            }).fail(function() {
-                $.get("https://api.codetabs.com/v1/proxy?quest=https://dictionary.cambridge.org/dictionary/english/" + word, function(response) {
+            $.ajax({
+                url: "https://api.codetabs.com/v1/proxy?quest=https://dictionary.cambridge.org/dictionary/english/" + word,
+                type: "GET",
+                success: function(response) {
                     render_phonetics(response);
                     render_voices(response);
                     if (autoplay == "uk") {
@@ -17,9 +16,7 @@ window.addEventListener('load', e => {
                     } else if (autoplay == "us") {
                         $("#us-button").trigger("click");
                     }
-                }).fail(function() {
-                    alert("Connection error!");
-                });
+                }
             });
         }
     });
@@ -29,7 +26,7 @@ window.addEventListener('load', e => {
 async function registerSW() {
     if ("serviceWorker" in navigator) { 
         try {
-            await navigator.serviceWorker.register("./sw.js?v=20190917-1"); 
+            await navigator.serviceWorker.register("./sw.js?v=20190920-1"); 
         } catch (e) {
             alert("ServiceWorker registration failed!"); 
         }
@@ -37,19 +34,24 @@ async function registerSW() {
 }
 
 function render_phonetics(response) {
-    var de1 = '<span class="ipa dipa">';
+    var de1 = '<span class="ipa';
+    var de2 = '>';
+    var start = 0;
+    var end = 0;
 
-    var uk_start = response.search(de1) + de1.length;
-    var remind = response.substring(uk_start, response.length);
-    var uk_end = remind.search('</span>');
-    var uk = remind.substring(0, uk_end);
+    start = response.search(de1) + de1.length;
+    response = response.substring(start, response.length);
+    start = response.search(de2) + de2.length;
+    response = response.substring(start, response.length);
+    end = response.search('</span>');
+    var uk = response.substring(0, end);  
 
-    response = remind;     
-
-    var us_start = response.search(de1) + de1.length;
-    var remind = response.substring(us_start, response.length);
-    var us_end = remind.search('</span>');
-    var us = remind.substring(0, us_end);
+    start = response.search(de1) + de1.length;
+    response = response.substring(start, response.length);
+    start = response.search(de2) + de2.length;
+    response = response.substring(start, response.length);
+    end = response.search('</span>');
+    var us = response.substring(0, end); 
 
     $("#uk-span").html("/" + uk + "/");
     $("#us-span").html("/" + us + "/");

@@ -1,4 +1,4 @@
-const cacheName = "pronunciation-v1-20190917-1";
+const cacheName = "pronunciation-v1-20190920-1";
 const staticAssets = [
     "/index.html",
     "/css/styles.css",
@@ -12,13 +12,7 @@ self.addEventListener("install", async event => {
 });
 
 self.addEventListener("fetch", event => {
-    console.log(event.request.url);
     const req = event.request;
-    if (staticAssets.includes(req.url)) {
-        console.log("Hi");
-    } else {
-        console.log(req.url);
-    }
     if (/.*(json)$/.test(req.url)) {
         event.respondWith(networkFirst(req));
     } else {
