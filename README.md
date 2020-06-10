@@ -12,8 +12,6 @@ See [Demo](https://pronunciation.cloudns.asia/)
 
 ## License
 
-Lightweight Message Queue
-
 Copyright (C) 2019  Misam Saki, misam.ir
 
 This program is free software: you can redistribute it and/or modify
